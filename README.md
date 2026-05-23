@@ -27,3 +27,10 @@ O sistema oferece um gerenciamento total das produções com as seguintes opera�
 ---
 
 ## 📸 Fotos do Projeto
+
+![Interface do sistema](Imagem/Captura de tela 2026-05-23 200619.png)
+![Interface do sistema](Imagem/Captura de tela 2026-05-23 200641.png)
+![Interface do sistema](Imagem/Captura de tela 2026-05-23 200703.png)
+![Interface do sistema](Imagem/Captura de tela 2026-05-23 200744.png)
+![Interface do sistema](Imagem/Captura de tela 2026-05-23 201328.png)
+
