@@ -1,0 +1,94 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<header class="container text-white "> 
+    <h1 class="text-center">
+        <strong> Catálogo.NET </strong>
+    </h2>
+    <h4 class="mt-4"> Não se perca mais!! Registre o último episódio de suas séries e animes favoritos📝</h4>
+</header>
+
+<body>
+    <form method="post" class="mt-3">
+        <div>
+            <label for="Titulo"> Nome do Série/Anime </label>
+            <input type="text" class="form-control mb-2" id="Titulo" name="Titulo" placeholder="Digite o nome da Serie ou Anime" required/>
+        </div>
+        
+         <div>
+            <label for="Temporada"> Nº da Temporada </label>
+            <input type="number" class="form-control mb-2" id="Temporada" name="Temporada" placeholder="Digite o número da temporada" required />
+        </div>
+
+        <div>
+            <label for="UltimoEpisodio"> Nº do Episódio </label>
+            <input type="number" class="form-control mb-2" id="UltimoEpisodio" name="UltimoEpisodio" placeholder="Digite o número do episódio" required />
+        </div>
+
+        <div>
+            <label for="UrlImagem"> Imagem de Capa </label>
+            <input type="text" class="form-control mb-2" id="UrlImagem" name="UrlImagem" placeholder="Cole aqui a URL da imagem apenas formato JPG ou PNG" required />
+        </div>
+
+        <button type="submit" class="btn btn-success w-100 form-control"> Finalizar </button>
+        
+    </form>
+
+    <div class="container text-center">
+        <h2 class="text-start mt-5"> Sua Lista de Séries/Animes </h2>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4"> @foreach (var obra in Model.ListaDeObras)
+            {
+                <div class="col"> <section class="card h-100 card-serie bg-dark text-white border-3 border-light-subtle"> <img src="@obra.UrlImagem" class="card-img-top" alt="@obra.Titulo">
+                        <div class="card-body">
+                            <h3>@obra.Titulo</h3>
+                            <p>Temporada: @obra.Temporada</p> 
+                            <p>Episódio: @obra.UltimoEpisodio</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 d-flex justify-content-between">
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar-@obra.Id">
+                                Atualizar
+                            </button>
+                            <form method="post" asp-page-handler="Deletar" asp-route-id="@obra.Id">
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </div>
+                        
+                        <div class="modal fade" id="modalEditar-@obra.Id" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Editar @obra.Titulo</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form method="post" asp-page-handler="Atualizar" asp-route-id="@obra.Id">
+                                        <div class="modal-body text-start">
+                                            <div class="mb-3">
+                                                <label for="novaTemporada-@obra.Id" class="form-label">Nova Temporada</label>
+                                                <input type="number" class="form-control" id="novaTemporada-@obra.Id" name="novaTemporada" value="@obra.Temporada" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="novoEpisodio-@obra.Id" class="form-label">Novo Episódio</label>
+                                                <input type="number" class="form-control" id="novoEpisodio-@obra.Id" name="novoEpisodio" value="@obra.UltimoEpisodio" required>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            }
+        </div>
+    </div>
+
+</body>
+
+

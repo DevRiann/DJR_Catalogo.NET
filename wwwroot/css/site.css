@@ -1,0 +1,56 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem oklab(99.107% 0 -0.00011), 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: #252629;
+  color: white;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+nav
+{
+  background-color: #712cf9;
+}
+
+footer
+{
+  background-color: #2b3035;
+}
+
+.nav-link
+{
+  color: white;
+  gap: 5px;
+  padding: 10px; 
+}
+
+.navbar-nav .nav-link.menu-ativo 
+{
+    color: red; /* Um tom de azul destacado (mude para a cor que preferir) */
+    font-weight: bold;         /* Deixa o texto em negrito */
+}

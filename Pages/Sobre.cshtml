@@ -1,0 +1,59 @@
+@page
+@model SobreModel
+@{
+    ViewData["Title"] = "Sobre";
+}
+
+<div class="container">
+    <h2 class="display-4 text-center mb-4">Sobre o Projeto</h2>
+    <p class="lead text-center mb-5">
+        Este site foi desenvolvido para você gerenciar e acompanhar suas séries e animes favoritos de forma totalmente prática. Esqueça a frustração de perder o fio da meada: aqui você registra o último episódio assistido e, mesmo após grandes hiatos entre as temporadas, saberá exatamente de onde continuar 🎬✨
+    </p>
+
+    @* Inserindo uma tabela *@
+    <table class="table table-dark table-bordered shadow-sm"> 
+        <thead class="table table-hover"> 
+            <tr>
+                <th>Tecnologia</th>
+                <th>Função no Sistema</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> <!-- Início da linha -->
+                <td>ASP.NET Core Razor Pages</td> <!-- Célula com a tecnologia -->
+                <td>Estrutura do site e gerenciamento das páginas no servidor.</td> <!-- Célula com a função -->
+            </tr>
+            <tr> 
+                <td>SQLite</td> 
+                <td>O banco de dados local onde as informações (como os dados das obras ou animes, com key id para identificação) ficam salvas.</td> 
+            </tr>
+            <tr> 
+                <td>Bootstrap</td> 
+                <td>O framework que cuida de toda a parte visual, deixando o site bonito e responsivo (adaptável para celular).</td> 
+            </tr>
+            <tr> 
+                <td>Entity Framework Core (EF Core)</td> 
+                <td>O framework responsável por receber o código em C# para transformar em comandos SQL.</td> 
+            </tr>
+            <tr> 
+                <td>API Gmail</td> 
+                <td>Responsável por encaminhar o formulário prenchido para o meu e-mail pessoal.</td> 
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="alert alert-warning mt-5 border-5 border-success-subtle" role="alert">
+        <h4 class="alert-heading">🧠 Minhas Impressões e Aprendizados</h4>
+        <p>
+            Durante o desenvolvimento deste projeto, puder compreeender como funcionar o ecosistema .NET 
+            integrando frameworks como ASP.NET com Razor Pages trazendo uma grande agilidade na interação da Linguagem C# 
+            com o padrão da arquitetura do desenvolvimento web (HTML, CSS e JavaScript), adicionando Bootstrap faciliatando a estilização do site em 
+            poucas linhas de comando, conseguir integrar o meu primeiro banco de dados com SQLite (compreendo noçóes básicas  
+            sobre as keys e como funciona os seus comando) mas não sendo possível sem a inclusão do EF Core, framework necessário para migrar os dados em 
+            C# para os comandos SQL (motor que alimenta o banco de dados) e por fim como extra poder aplicar uma API com suas chaves de autenticação para encaminhar o formulário
+            de feedback dos usuários. Com essa grande variedade de ferramentas me deu uma visão muito mais clara de como construir interfaces limpas e organizadas, aplicadas no que acredito
+            que são demandas no mercado da tecnologia. 
+        </p>
+    </div>
+    
+</div>
