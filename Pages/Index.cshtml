@@ -67,11 +67,11 @@
                                     <form method="post" asp-page-handler="Atualizar" asp-route-id="@obra.Id">
                                         <div class="modal-body text-start">
                                             <div class="mb-3">
-                                                <label for="novaTemporada-@obra.Id" class="form-label">Nova Temporada</label>
+                                                <label for="novaTemporada-@obra.Id" class="form-label text-dark"> Nova Temporada </label>
                                                 <input type="number" class="form-control" id="novaTemporada-@obra.Id" name="novaTemporada" value="@obra.Temporada" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="novoEpisodio-@obra.Id" class="form-label">Novo Episódio</label>
+                                                <label for="novoEpisodio-@obra.Id" class="form-label text-dark">Novo Episódio</label>
                                                 <input type="number" class="form-control" id="novoEpisodio-@obra.Id" name="novoEpisodio" value="@obra.UltimoEpisodio" required>
                                             </div>
                                         </div>
